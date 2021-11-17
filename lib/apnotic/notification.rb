@@ -3,7 +3,7 @@ require 'apnotic/abstract_notification'
 module Apnotic
 
   class Notification < AbstractNotification
-    attr_accessor :alert, :badge, :sound, :content_available, :category, :custom_payload, :url_args, :mutable_content, :thread_id, :type
+    attr_accessor :alert, :badge, :sound, :content_available, :category, :custom_payload, :url_args, :mutable_content, :thread_id, :voip
     attr_accessor :target_content_id, :interruption_level, :relevance_score
 
     def background_notification?
