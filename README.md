@@ -86,7 +86,7 @@ end
 connection.push_async(push)
 
 # wait for all requests to be completed
-connection.join
+connection.join(timeout: 5)
 
 # close the connection
 connection.close
@@ -224,7 +224,7 @@ It is also possible to create a connection that points to the Apple Development 
 Apnotic::Connection.development(options)
 ```
 
-> The concepts of PRODUCTION and DEVELOPMENT are different from what they used to be in previous specifications. Anything built directly from XCode and loaded on your phone will have the app generate DEVELOPMENT tokens, while everything else (TestFlight, Apple Store, HockeyApp, ...) will be considered as PRODUCTION environment.
+> The concepts of PRODUCTION and DEVELOPMENT are different from what they used to be in previous specifications. Anything built directly from Xcode and loaded on your phone will have the app generate DEVELOPMENT tokens, while everything else (TestFlight, Apple Store, HockeyApp, ...) will be considered as PRODUCTION environment.
 
 #### Methods
 
@@ -315,6 +315,9 @@ These are all Accessor attributes.
 | `category` | "
 | `custom_payload` | "
 | `thread_id` | "
+| `target_content_id` | "
+| `interruption_level` | Refer to [Payload Key Reference](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification#2943363) for details. iOS 15+
+| `relevance_score` | Refer to [Payload Key Reference](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification#2943363) for details. iOS 15+
 | `apns_id` | Refer to [Communicating with APNs](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CommunicatingwithAPNs.html) for details.
 | `expiration` | "
 | `priority` | "
